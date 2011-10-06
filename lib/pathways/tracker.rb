@@ -5,6 +5,8 @@ module Pathways
 
     def log_visit
 
+      return if Rails.env.test?
+
       unless client_id = cookies[:pathways_token]
         client_id = Digest::MD5.hexdigest("#{request.ip}:#{Time.now}")
         cookies[:pathways_token] = {
