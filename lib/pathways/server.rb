@@ -1,6 +1,13 @@
 require 'sinatra/base'
+require 'mongo_mapper'
 require 'erb'
 require 'pathways'
+require 'pathways/filter'
+require "pathways/session"
+require "pathways/visit"
+
+MongoMapper.connection = Mongo::Connection.new('localhost')
+MongoMapper.database = 'pathways'
 
 module Pathways
   class Server < Sinatra::Base

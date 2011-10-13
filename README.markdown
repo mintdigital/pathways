@@ -55,7 +55,7 @@ end
 
 ### Pathways::Parser
 
-Now that we're tracking the paths our users take we need to parse these so that we can mine this like a mofo.
+Now that we're tracking the paths our users take we need to parse these so that we can mine this like a mofo (note you might need to require 'pathways/parser').
 
     Pathways::Parser.execute
 
@@ -110,6 +110,7 @@ run Rack::URLMap.new \
 You can also easily mount Pathways on a subpath in your existing Rails 3 app by adding this to your `routes.rb`:
 
 ``` ruby
+require 'pathways/server'
 mount Pathways::Server.new, :at => "/pathways"
 ```
 
