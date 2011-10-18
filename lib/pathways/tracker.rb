@@ -17,7 +17,7 @@ module Pathways
 
       Rails.logger.info "PathwaysTracker:" << { :url => request.url,
         :request_method => request.method,
-        :path => request.request_uri,
+        :path => request.url,
         :controller => controller_name,
         :action => action_name,
         :params => params,
